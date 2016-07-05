@@ -1,6 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Clojure template
-pom.xml
 pom.xml.asc
 *jar
 /lib/
@@ -11,7 +10,7 @@ pom.xml.asc
 .lein-repl-history
 .lein-plugins/
 .lein-failures
-.nrepl-port
+.nrepl-port`
 ### Maven template
 target/
 pom.xml.tag
@@ -23,7 +22,6 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 ### Leiningen template
-pom.xml
 pom.xml.asc
 *jar
 /lib/

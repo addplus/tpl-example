@@ -31,7 +31,7 @@
 (window
   :p (em 1)
   (h1 :click #(reset! clicked true) "Click me please!!!")
-  (p :b (cell= (if clicked 1 0)) "Wahooo!!!!"
+  (p :b (cell= (if clicked 1 0)) "If you open your developer console you should see an error when you click above"
 
      #_(for-tpl [x c1]
                 (p (cell= (str x))))

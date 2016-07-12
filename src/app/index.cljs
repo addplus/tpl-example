@@ -17,40 +17,44 @@
 
 (defc c1 [1 2 3 4])
 
+(defc clicked false)
+
 (defelem h1 [attrs elems]
   (elem :f (em 1.5) :pt (em 1.2) attrs elems))
 
 (defelem p [attrs elems]
-  (elem :w (r 1 1) attrs elems))
+  (elem :sh (r 1 1) attrs elems))
 
 (defelem pre [attrs elems]
   (p :ff "courier" attrs elems))
 
 (window
   :p (em 1)
-  (h1 "First loop missing")
-  (p
-    (for-tpl [x c1]
-      (p (cell= (str x))))
-    (for-tpl [x c1]
-      (p (cell= (str (* 1000 x))))))
+  (h1 :click #(reset! clicked true) "Click me please!!!")
+  (p :b (cell= (if clicked 1 0)) "Wahooo!!!!"
 
-  (h1 "Both loops are present")
-  (p
+     #_(for-tpl [x c1]
+                (p (cell= (str x))))
+     #_(for-tpl [x c1]
+                (p (cell= (str (* 1000 x))))))
+
+  ;(h1 "Both loops are present")
+  ;
+  #_(p
     (elem
       (for-tpl [x c1]
-        (p (cell= (str x)))))
+               (p (cell= (str x)))))
     (elem
       (for-tpl [x c1]
-        (p (cell= (str (* 1000 x)))))))
+               (p (cell= (str (* 1000 x)))))))
 
-  (h1 "when-tpl` works")
-  (p
+  #_(h1 "when-tpl` works")
+  #_(p
     (when-tpl true
-      (p "This appears")))
+              (p "This appears")))
 
-  (h1 "`loop-tpl` within `when-tpl` throws an error")
-  (pre "
+  #_(h1 "`loop-tpl` within `when-tpl` throws an error")
+  #_(pre "
   (p
       (when-tpl true
             (for-tpl [x [1 2 3]]
@@ -58,9 +62,9 @@
 
                     ")
 
-  (h1 "`loop-tpl` within `when-tpl` works when wrapped within an elem")
-  (p
+  #_(h1 "`loop-tpl` within `when-tpl` works when wrapped within an elem")
+  #_(p
     (when-tpl true
-      (elem
-        (for-tpl [x [1 2 3]]
-          (p (cell= (str x ". visible"))))))))
+              (elem
+                (for-tpl [x [1 2 3]]
+                         (p (cell= (str x ". visible"))))))))

@@ -17,7 +17,13 @@
 
 (defc c1 [1 2 3 4])
 
+(def black (c 0x000000))
+(def white (c 0xFFFFFF))
+
 (defc clicked false)
+
+(defelem container [attrs elems]
+         (elem :sh (r 1 1) :sv (r 1 1) attrs elems))
 
 (defelem h1 [attrs elems]
   (elem :f (em 1.5) :pt (em 1.2) attrs elems))
@@ -28,17 +34,43 @@
 (defelem pre [attrs elems]
   (p :ff "courier" attrs elems))
 
+(def appbar-height 50)
+
+(defelem appbar
+         "White appbar with add+ logo and user circle at the top of the screen."
+         [attrs elems]
+         (elem :sh (r 1 1) :sv appbar-height :ph 16 :pv 8 :g 8 :fc black :c white :bb 1 :bc black attrs
+               (elem :sv appbar-height :sh (r 1 1) :av :middle :ah :right
+                     (elem "search")
+                     (elem "account_circle")
+                     (elem "me"))))
+
+
+(defelem content [attrs elems]
+         (elem :sv 500 :sh (r 1 1) :b 1 :bc black "CONTENT"))
+
 (window
-  :p (em 1)
-  (h1 :click #(reset! clicked true) "Click me please!!!")
-  (p :b (cell= (if clicked 1 0)) "If you open your developer console you should see an error when you click above"
+  (container
+        (appbar)
+        (container :sv (- (r 1 1) appbar-height) :p 10 :g 10 :scroll true
+                   (content)
+                   (content)
+                   (content)
+                   (content)
+                   (content)
+                   )
+        (container
+          :p (em 1)
+          (h1 :click #(reset! clicked true) "Click me please!!!"))
+        (p :b (cell= (if clicked 1 0)) "If you open your developer console you should see an error when you click above"
+           )))
 
-     #_(for-tpl [x c1]
-                (p (cell= (str x))))
-     #_(for-tpl [x c1]
-                (p (cell= (str (* 1000 x))))))
+           #_(for-tpl [x c1]
+                      (p (cell= (str x))))
+           #_(for-tpl [x c1]
+                      (p (cell= (str (* 1000 x)))))
 
-  ;(h1 "Both loops are present")
+        ;(h1 "Both loops are present")
   ;
   #_(p
     (elem
@@ -67,4 +99,4 @@
     (when-tpl true
               (elem
                 (for-tpl [x [1 2 3]]
-                         (p (cell= (str x ". visible"))))))))
+                         (p (cell= (str x ". visible")))))))

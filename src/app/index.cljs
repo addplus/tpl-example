@@ -47,17 +47,18 @@
 
 
 (defelem content [attrs elems]
-         (elem :sv 500 :sh (r 1 1) :b 1 :bc black "CONTENT"))
+         (elem :sv 250 :sh (r 1 1) :b 1 :bc black (str "CONTENT" elems)))
 
 (window
   (container
         (appbar)
         (container :sv (- (r 1 1) appbar-height) :p 10 :g 10 :scroll true
-                   (content)
-                   (content)
-                   (content)
-                   (content)
-                   (content)
+                   (content 1)
+                   (content 2)
+                   (content 3)
+                   (content 4)
+                   (content 5)
+                   (content 6)
                    )
         (container
           :p (em 1)

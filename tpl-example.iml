@@ -25,14 +25,14 @@
     <orderEntry type="library" name="Maven: org.clojure:tools.reader:1.0.0-beta1" level="project" />
     <orderEntry type="library" name="Maven: adzerk:boot-cljs:1.7.228-1" level="project" />
     <orderEntry type="library" name="Maven: adzerk:boot-reload:0.4.9" level="project" />
-    <orderEntry type="library" name="Maven: hoplon:boot-hoplon:0.2.1" level="project" />
-    <orderEntry type="library" name="Maven: hoplon:ui:0.0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: hoplon:hoplon:6.0.0-alpha16" level="project" />
+    <orderEntry type="library" name="Maven: hoplon:ui:0.1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: hoplon:hoplon:6.0.0-alpha17" level="project" />
     <orderEntry type="library" name="Maven: cljsjs:jquery:1.9.1-0" level="project" />
     <orderEntry type="library" name="Maven: hoplon:javelin:3.8.4" level="project" />
     <orderEntry type="library" name="Maven: tailrecursion:cljs-priority-map:1.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.clojure:data.priority-map:0.0.2" level="project" />
     <orderEntry type="library" name="Maven: riddley:riddley:0.1.6" level="project" />
+    <orderEntry type="library" name="Maven: cljsjs:markdown:0.6.0-beta1-0" level="project" />
     <orderEntry type="library" name="Maven: boot:core:2.6.0" level="project" />
     <orderEntry type="library" name="Maven: boot:pod:2.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.tcrawley:dynapath:0.2.3" level="project" />

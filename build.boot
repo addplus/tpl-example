@@ -46,7 +46,7 @@
          (comp
            (watch)
            (speak)
-           (checkout :dependencies '[[hoplon/ui "0.0.1-SNAPSHOT"]])
+           (checkout :dependencies '[[hoplon/ui "0.1.0-SNAPSHOT"]])
            (hoplon)
            (reload)
            (cljs)
